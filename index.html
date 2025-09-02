@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravi Motors - Auto Garage in Polgasowita</title>
+    <meta name="description" content="Professional auto repair services in Polgasowita: Diesel/Petrol vehicle repair, tinkering, painting, and auto electrical systems. Your trusted mechanic in Sri Lanka.">
+    <meta name="keywords" content="auto garage Polgasowita, car mechanic Sri Lanka, tinkering and paint, vehicle repair, auto electrical">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "Ravi Motors",
+      "image": "",
+      "@id": "",
+      "url": "",
+      "telephone": "+94772906820",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Garage Road",
+        "addressLocality": "Polgasowita",
+        "addressRegion": "Western",
+        "postalCode": "",
+        "addressCountry": "LK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 7.3333,
+        "longitude": 80.1667
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      } 
+    }
+    </script>
+
+    <!-- CSS & JS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <style>
+        .sinhala {
+            font-family: 'Noto Sans Sinhala', sans-serif;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .active-lang {
+            background-color: #0048bb;
+            color: white;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600861195091-690c92f1d2cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .map-container {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Prevent horizontal overflow */
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+        img, iframe, table, pre, svg {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-blue-600">Ravi Motors</span>
+                </div>
+
+                <!-- Desktop Menu + Language -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 nav-link" data-en="Home" data-si="මුල් පිටුව">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 nav-link" data-en="Services" data-si="සේවා">Services</a>
+                    <a href="#why-us" class="text-gray-700 hover:text-blue-600 nav-link" data-en="Why Us" data-si="ඇයි අපි">Why Us</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 nav-link" data-en="Contact" data-si="අමතන්න">Contact</a>
+
+                    <!-- Language Toggle -->
+                    <div class="flex space-x-1 ml-6">
+                        <button id="enBtn" class="px-3 py-1.5 text-sm rounded-full bg-blue-300 active-lang">EN</button>
+                        <button id="siBtn" class="px-3 py-1.5 text-sm rounded-full bg-blue-300">සිං</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white pb-3 px-4">
+                <a href="#home" class="block py-2 text-gray-700 nav-link" data-en="Home" data-si="මුල් පිටුව">Home</a>
+                <a href="#services" class="block py-2 text-gray-700 nav-link" data-en="Services" data-si="සේවා">Services</a>
+                <a href="#why-us" class="block py-2 text-gray-700 nav-link" data-en="Why Us" data-si="ඇයි අපි">Why Us</a>
+                <a href="#contact" class="block py-2 text-gray-700 nav-link" data-en="Contact" data-si="අමතන්න">Contact</a>
+
+                <!-- Mobile Language Toggle -->
+                <div class="flex justify-center space-x-2 mt-3 pt-3 border-t border-gray-200">
+                    <button id="enBtnMobile" class="px-3 py-1.5 text-sm rounded-full bg-gray-100 active-lang">EN</button>
+                    <button id="siBtnMobile" class="px-3 py-1.5 text-sm rounded-full bg-gray-100">සිං</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-image pt-24 pb-32 md:pt-32 md:pb-40 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4" data-en="Ravi Motors" data-si="රවි මෝටර්ස්">Ravi Motors</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto" data-en="Your Trusted Auto Care Partner in Polgasowita" data-si="පොල්ගස්ඕවිට ඔබේ විශ්වාසයේ මෝටර් අලුත්වැඩියාව">Your Trusted Auto Care Partner in Polgasowita</p>
+                <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300" data-en="Get a Free Quote" data-si="අලුත්වැඩියා ගණනය ලබාගන්න">Get a Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-en="Our Services" data-si="අපගේ සේවා">Our Services</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-50 p-6 rounded-lg shadow-md transition duration-300" data-aos="fade-up">
+                    <div class="text-blue-600 mb-4">
+                        <i data-feather="settings" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-en="Diesel & Petrol Repair" data-si="ඩීසල් සහ පෙට්රල් වාහන අලුත්වැඩියා">Diesel & Petrol Vehicle Repair</h3>
+                    <p class="text-gray-600" data-en="Professional repair services for all types of diesel and petrol vehicles with expert mechanics." data-si="වෘත්තීය යාන්ත්‍රිකයින් සමග සියලුම ඩීසල් සහ පෙට්රල් වාහන සඳහා අලුත්වැඩියා සේවා">Professional repair services for all types of diesel and petrol vehicles with expert mechanics.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-50 p-6 rounded-lg shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-blue-600 mb-4">
+                        <i data-feather="tool" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-en="Tinkering & Bodywork" data-si="ටින්කරිං සහ බොඩි අලුත්වැඩියාව">Tinkering & Bodywork</h3>
+                    <p class="text-gray-600" data-en="High-quality bodywork and dent removal services to restore your vehicle's original appearance." data-si="ඔබේ වාහනයේ මුල් රූපය ප්‍රතිස්ථාපනය කිරීම සඳහා උසස් තත්ත්වයේ බොඩි අලුත්වැඩියාව සහ ඩෙන්ට් ඉවත් කිරීමේ සේවා">High-quality bodywork and dent removal services to restore your vehicle's original appearance.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-gray-50 p-6 rounded-lg shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-blue-600 mb-4">
+                        <i data-feather="droplet" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-en="Professional Painting" data-si="වෘත්තීය තීන්ත ආලේපනය">Professional Painting</h3>
+                    <p class="text-gray-600" data-en="Expert vehicle painting using high-quality materials for a flawless, long-lasting finish." data-si="නිරවුල්, දිගුකාලීන පළමුවන තත්ත්වය සඳහා උසස් තත්ත්වයේ ද්‍රව්‍ය භාවිතා කරමින් වෘත්තීය වාහන තීන්ත ආලේපනය">Expert vehicle painting using high-quality materials for a flawless, long-lasting finish.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-gray-50 p-6 rounded-lg shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-blue-600 mb-4">
+                        <i data-feather="zap" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-en="Auto Electrical Systems" data-si="වාහන විදුලි පද්ධති">Auto Electrical Systems</h3>
+                    <p class="text-gray-600" data-en="Diagnosis and repair of all vehicle electrical systems including wiring, alternators, and starters." data-si="වයරිං, ඇල්ටර්නේටර් සහ ස්ටාර්ටර් ඇතුළු සියලුම වාහන විදුලි පද්ධති විනිශ්චය සහ අලුත්වැඩියා">Diagnosis and repair of all vehicle electrical systems including wiring, alternators, and starters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-en="Why Choose Ravi Motors?" data-si="ඇයි රවි මෝටර්ස් තෝරාගත යුත්තේ?">Why Choose Ravi Motors?</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="award" class="text-blue-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2" data-en="Experienced Mechanics" data-si="අත්දැකීම් සහිත යාන්ත්‍රිකයින්">Experienced Mechanics</h3>
+                    <p class="text-gray-600" data-en="Our team has over 15 years of combined experience in auto repair." data-si="අපගේ කණ්ඩායමට මෝටර් රථ අලුත්වැඩියා ක්ෂේත්‍රයේ වසර 15කට වැඩි ඒකාබද්ධ අත්දැකීමක් ඇත">Our team has over 15 years of combined experience in auto repair.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="check-circle" class="text-blue-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2" data-en="Quality Parts" data-si="ගුණාත්මක උපාංග">Quality Parts</h3>
+                    <p class="text-gray-600" data-en="We use only genuine or high-quality aftermarket parts for all repairs." data-si="සියලුම අලුත්වැඩියා සඳහා අපි භාවිතා කරන්නේ උසස් තත්ත්වයේ උපාංග පමණි">We use only genuine or high-quality aftermarket parts for all repairs.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="dollar-sign" class="text-blue-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2" data-en="Affordable Pricing" data-si="පහසු මිලෙන්">Affordable Pricing</h3>
+                    <p class="text-gray-600" data-en="Competitive pricing without compromising on service quality." data-si="සේවා ගුණාත්මකභාවය පොරොත්තු නොවූ තරඟකාරී මිල">Competitive pricing without compromising on service quality.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="clock" class="text-blue-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2" data-en="Quick Service" data-si="ක්ෂණික සේවය">Quick Service</h3>
+                    <p class="text-gray-600" data-en="Efficient service to get you back on the road as soon as possible." data-si="ඔබව හැකි ඉක්මනින් මාර්ගයේ යළි පිහිටුවීම සඳහා කාර්යක්ෂම සේවය">Efficient service to get you back on the road as soon as possible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-en="Contact Us" data-si="අප අමතන්න">Contact Us</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info & Map -->
+                <div data-aos="fade-right">
+                    <h3 class="text-xl font-semibold mb-4" data-en="Our Location" data-si="අපගේ ස්ථානය">Our Location</h3>
+                    <div class="mb-6">
+                        <div class="flex items-start mb-4">
+                            <i data-feather="map-pin" class="text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium" data-en="Address:" data-si="ලිපිනය:">Address:</p>
+                                <p data-en="QXGM+Q73, Diyakada Road, Polgasowita, Sri Lanka" data-si="QXGM+Q73, දියකඩ පාර, පොල්ගස්ඕවිට, ශ්‍රී ලංකාව">123 Garage Road, Polgahawela, Sri Lanka</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <i data-feather="phone" class="text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium" data-en="Phone:" data-si="දුරකථන:">Phone:</p>
+                                <a href="tel:+94772906820" class="hover:text-blue-600">+94 772 906 820</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="message-square" class="text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium" data-en="WhatsApp:" data-si="WhatsApp:">WhatsApp:</p>
+                                <a href="https://wa.me/94772906820" target="_blank" class="hover:text-blue-600" data-en="Chat on WhatsApp" data-si="WhatsApp හරහා කතා කරන්න">Chat on WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold mb-4" data-en="Working Hours" data-si="වැඩ කරන වේලාවන්">Working Hours</h3>
+                    <div class="mb-6">
+                        <div class="flex justify-between py-2 border-b border-gray-200">
+                            <span data-en="Monday - Friday" data-si="සඳුදා - සිකුරාදා">Monday - Friday</span>
+                            <span>8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-200">
+                            <span data-en="Saturday" data-si="සෙනසුරාදා">Saturday</span>
+                            <span>8:00 AM - 2:00 PM</span>
+                        </div>
+                        <div class="flex justify-between py-2">
+                            <span data-en="Sunday" data-si="ඉරිදා">Sunday</span>
+                            <span data-en="Closed" data-si="වසා ඇත">Closed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container rounded-lg shadow-lg overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.585911918597!2d79.980591!3d6.7768866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24f59f5c7178d:0xf3819b1ec0c285a6!2sRavi+Motors!5e0!3m2!1sen!2slk!4v1620000000000!5m2!1sen!2slk" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div data-aos="fade-left">
+                    <h3 class="text-xl font-semibold mb-4" data-en="Get In Touch" data-si="අප හා සම්බන්ධ වන්න">Get In Touch</h3>
+                    <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSff9F_fGN7Pk8BWWCK64xClepIhm-xp-zP3qBenVG-ILb22UA/formResponse" method="POST" target="_blank">
+                        <input type="hidden" id="languageField" name="entry.1261818461" value="English">
+                        
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2" data-en="Your Name" data-si="ඔබේ නම">Your Name</label>
+                            <input type="text" id="name" name="entry.644723219" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 mb-2" data-en="Phone Number" data-si="දුරකථන අංකය">Phone Number</label>
+                            <input type="tel" id="phone" name="entry.1608550654" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2" data-en="Email (Optional)" data-si="ඊමේල් (විකල්ප)">Email (Optional)</label>
+                            <input type="email" id="email" name="entry.965517131" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2" data-en="Your Message" data-si="ඔබේ පණිවිඩය">Your Message</label>
+                            <textarea id="message" name="entry.192837465" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" data-en="Describe your vehicle issue or service needed..." data-si="ඔබේ වාහන ගැටලුව හෝ අවශ්‍ය සේවය විස්තර කරන්න...">Describe your vehicle issue or service needed...</textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-md transition duration-300" data-en="Send Message" data-si="පණිවිඩය යවන්න">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Ravi Motors</h3>
+                    <p data-en="Your trusted auto care partner in Polgasowita since 20xx." data-si="20xx සිට  පොල්ගස්ඕවිට ඔබේ විශ්වාසනීය මෝටර් අලුත්වැඩියා සහයෝගියා">Your trusted auto care partner in Polgasowita since 20xx.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4" data-en="Quick Links" data-si="ක්ෂණික සබැඳි">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-orange-400 nav-link" data-en="Home" data-si="මුල් පිටුව">Home</a></li>
+                        <li><a href="#services" class="hover:text-orange-400 nav-link" data-en="Services" data-si="සේවා">Services</a></li>
+                        <li><a href="#why-us" class="hover:text-orange-400 nav-link" data-en="Why Us" data-si="ඇයි අපි">Why Us</a></li>
+                        <li><a href="#contact" class="hover:text-orange-400 nav-link" data-en="Contact" data-si="අමතන්න">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4" data-en="Contact Info" data-si="සම්බන්ධතා තොරතුරු">Contact Info</h3>
+                    <div class="flex items-start mb-3">
+                        <i data-feather="map-pin" class="mt-1 mr-3"></i>
+                        <p data-en="QXGM+Q73, Diyakada Road, Polgasowita" data-si="QXGM+Q73, දියකඩ පාර, පොල්ගස්ඕවිට">QXGM+G73,Diyakada Road, Polgasowita</p>
+                    </div>
+                    <div class="flex items-start">
+                        <i data-feather="phone" class="mt-1 mr-3"></i>
+                        <a href="tel:+94772906820" class="hover:text-orange-400">+94 772 906 820</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+                <p data-en="© 2025 Ravi Motors. All rights reserved." data-si="© 2025 රවි මෝටර්ස්. සියලුම හිමිකම් ඇවිරිණි">© 2025 Ravi Motors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Language toggle functionality
+        let currentLanguage = 'en';
+        const languageField = document.getElementById('languageField');
+
+        function updateLanguage(lang) {
+            currentLanguage = lang;
+
+            // Update all language buttons
+            document.querySelectorAll('#enBtn, #enBtnMobile').forEach(btn => {
+                if (lang === 'en') {
+                    btn.classList.add('active-lang');
+                } else {
+                    btn.classList.remove('active-lang');
+                }
+            });
+            document.querySelectorAll('#siBtn, #siBtnMobile').forEach(btn => {
+                if (lang === 'si') {
+                    btn.classList.add('active-lang');
+                } else {
+                    btn.classList.remove('active-lang');
+                }
+            });
+
+            // Update hidden form field
+            languageField.value = lang === 'en' ? 'English' : 'Sinhala';
+
+            // Update all text elements
+            document.querySelectorAll('[data-en], [data-si]').forEach(element => {
+                const text = lang === 'en' ? element.dataset.en : element.dataset.si;
+                if (text) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+
+            // Apply Sinhala font
+            document.body.classList.toggle('sinhala', lang === 'si');
+        }
+
+        // Set default language
+        updateLanguage('en');
+
+        // Add event listeners
+        document.querySelectorAll('#enBtn, #enBtnMobile').forEach(btn => {
+            btn.addEventListener('click', () => updateLanguage('en'));
+        });
+        document.querySelectorAll('#siBtn, #siBtnMobile').forEach(btn => {
+            btn.addEventListener('click', () => updateLanguage('si'));
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Initialize feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
